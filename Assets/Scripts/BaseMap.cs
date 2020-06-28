@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.EventSystems;
 
 public class BaseMap : MonoBehaviour
 {
@@ -109,8 +110,12 @@ public class BaseMap : MonoBehaviour
         var mo = g.AddComponent<ModuleObject>();
         mo.module = m;
 
+        g.tag = m.name;
+
+
         return new ModuleTile(g, tile);
-        
+
+       
     }
 
     /// <summary>
@@ -161,8 +166,6 @@ public class BaseMap : MonoBehaviour
     void Update()
     {
 
-       
-
         if (Input.GetMouseButtonDown(0))
         {
             //get the tile currently being clicked on
@@ -170,12 +173,12 @@ public class BaseMap : MonoBehaviour
             var p2 = new Vector3(p.x, p.y, 0f);
             var p3 = map.WorldToCell(p2);
 
-            
             if (map.GetTile(p3) == null)
             {
                 //return if it's null
                 return;
             }
+
 
             //if the clicked tile is a buildzone and there is a module currently selected
             if (buildZone.ContainsKey(p3) && currentlySelected != null)
@@ -237,6 +240,8 @@ public class BaseMap : MonoBehaviour
             }
 
             
+            if(currentTiles.ContainsKey(p3))
+                UpgradeSystem.OpenModuleUpgradeMenu(currentTiles[p3].gameObject);
 
         }
     }
