@@ -4,25 +4,16 @@ using UnityEngine;
 
 public class UpgradeSystem : MonoBehaviour
 {
+    
     public static GameObject bioMenu;
     public static GameObject energyMenu;
     public static GameObject waterMenu;
     public static GameObject engineeringMenu;
-    public static GameObject leisureMenu;
-    public static GameObject livingMenu;
-    public static GameObject medicalMenu;
-    public static GameObject researchMenu;
-    public static GameObject securityMenu;
 
     public GameObject bioUpgradeMenu;
     public GameObject energyUpgradeMenu;
     public GameObject waterUpgradeMenu;
     public GameObject engineeringUpgradeMenu;
-    public GameObject leisureUpgradeMenu;
-    public GameObject livingUpgradeMenu;
-    public GameObject medicalUpgradeMenu;
-    public GameObject researchUpgradeMenu;
-    public GameObject securityUpgradeMenu;
 
     private static bool menuOpen = false;
 
@@ -32,11 +23,6 @@ public class UpgradeSystem : MonoBehaviour
         energyMenu = energyUpgradeMenu;
         waterMenu = waterUpgradeMenu;
         engineeringMenu = engineeringUpgradeMenu;
-        leisureMenu = leisureUpgradeMenu;
-        livingMenu = livingUpgradeMenu;
-        medicalMenu = medicalUpgradeMenu;
-        researchMenu = researchUpgradeMenu;
-        securityMenu = securityUpgradeMenu;
         
     }
 
@@ -62,21 +48,6 @@ public class UpgradeSystem : MonoBehaviour
                     break;
                 case "Engineering":
                     engineeringMenu.SetActive(true);
-                    break;
-                case "Leisure":
-                    leisureMenu.SetActive(true);
-                    break;
-                case "Living":
-                    livingMenu.SetActive(true);
-                    break;
-                case "Medical":
-                    medicalMenu.SetActive(true);
-                    break;
-                case "Research":
-                    researchMenu.SetActive(true);
-                    break;
-                case "Security":
-                    securityMenu.SetActive(true);
                     break;
                 default:
                     UpgradeSystem.menuOpen = false;

@@ -10,11 +10,6 @@ TagManager:
   - Energy
   - Control
   - BuildingZone
-  - Living
-  - Leisure
-  - Medical
-  - Research
-  - Security
   layers:
   - Default
   - TransparentFX
